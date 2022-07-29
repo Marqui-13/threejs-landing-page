@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-eqiuv="X-UA-Compatible" content="ie=edge" />
+    <title>Vite App</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+
+      html, body{
+        height: 100vh;
+        font-family: 'Poppins';
+        color: white;
+        background: #000;
+      }
+
+      canvas{
+        width: 100%;
+        height: 100%
+      }
+
+      .webgl{
+        position: fixed;
+        top: 0;
+        right: 0;
+        outline: none;
+      }
+
+      .container{
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-content: center;
+      }
+
+      .content{
+        display: flex;
+        gap: 5em;
+        width: 100%;
+        padding-top: 3em;
+        position: relative;
+      }
+
+      .content:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-bottom: 1px solid white;
+        transform: scaleX(1);
+      }
+
+      h1{
+        font-size: 2.5rem;
+        width: 50vw;
+        line-height: 97%;
+        text-align: right;
+      }
+
+      h1, p{
+        flex-basis: 0;
+        flex-grow: 1;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      }
+
+      p{
+        font-size:  1.3rem;
+        width: 40vw;
+        text-align: left;
+      }
+     
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <h1> The next <br> Dimension </h1>
+        <p> Explore 3D space with this interactive particle effect. </p>
+      </div>
+    </div>
+    <canvas class="webgl"></canvas>
+    <div id="app"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js" integrity="sha512-LF8ZB1iTwi4Qvkm4pekHG4a437Y9Af5ZuwbnW4GTbAWQeR2E4KW8WF+xH8b9psevV7wIlDMx1MH9YfPqgKhA/Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/CSSRulePlugin.min.js" integrity="sha512-Aa3UvVB5yhH/dNXMt8nGZDD15Xmntq1ODcavfgT8omSLaomrJKYybWczzc6UJYDUAdqR1hmDJ47V4Ux50PPIuw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="./main.js"></script>
+
+    <!-- GSAP Animations -->
+    <script>
+      const content = CSSRulePlugin.getRule('.content:before');
+      const h1 = document.querySelector('h1');
+      const p = document.querySelector('p');
+      const tl = gsap.timeline();
+
+      tl.from(content, {delay: 0.5, duration: 4, cssRule: {scaleX: 0}});
+      tl.to(h1, {duration: 2, clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', y: '30px' }, "-=3")
+      tl.to(p, {duration: 4, clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', y: '30px' }, "-=2")
+
+    </script>
+  </body>
+</html>
