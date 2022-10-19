@@ -72,6 +72,20 @@ scene.add(pointLight);
 
 
 
+/**
+ * Renderer Section Starts
+ */
+const renderer = new THREE.WebGLRenderer({
+    canvas: canvas
+});
+renderer.setSize(sizes.width, sizes.height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setClearColor(new THREE.Color('#21282a'), 1)
+/**
+ * Renderer Section Ends
+ */
+
+
 
 
 /**
@@ -124,24 +138,8 @@ scene.add(camera);
 
 
 // Controls
-const controls = new OrbitControls(camera, canvas)
+const controls = new THREE.OrbitControls(camera, canvas)
 // controls.enableDamping = true
-
-
-
-
-/**
- * Renderer Section Starts
- */
-const renderer = new THREE.WebGLRenderer({
-    canvas: canvas
-});
-renderer.setSize(sizes.width, sizes.height);
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-renderer.setClearColor(new THREE.Color('#21282a'), 1)
-/**
- * Renderer Section Ends
- */
 
 
 
