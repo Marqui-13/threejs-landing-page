@@ -147,24 +147,6 @@ scene.add(camera);
 
 document.addEventListener("mousemove", animateParticles)
 
-// START JAVASCRIPT TOUCH EVENTS
-window.addEventListener("touchstart", event => {
-    mouse.x = event.changedTouches[0].clientX;
-    mouse.y = event.changedTouches[0].clientY;
-}, false);
-
-window.addEventListener("touchmove", event => {
-    //event.preventDefault();
-    mouse.x = event.targetTouches[0].clientX;
-    mouse.y = event.targetTouches[0].clientY;
-}, false);
-
-window.addEventListener("touchend", event => {
-    //event.preventDefault();
-    mouse.x = 0;
-    mouse.y = 0;
-}, false);
-// END JAVASCRIPT TOUCH EVENTS
 
 let mouseX = 0;
 let mouseY = 0;
@@ -174,6 +156,25 @@ function animateParticles(event) {
   mouseX = event.clientX;
 
 }
+
+// START JAVASCRIPT TOUCH EVENTS
+window.addEventListener("touchstart", event => {
+    mouseX = event.changedTouches[0].clientX;
+    mouseY = event.changedTouches[0].clientY;
+}, false);
+
+window.addEventListener("touchmove", event => {
+    //event.preventDefault();
+    mouseX = event.targetTouches[0].clientX;
+    mouseY = event.targetTouches[0].clientY;
+}, false);
+
+window.addEventListener("touchend", event => {
+    //event.preventDefault();
+    mouseX = 0;
+    mouseY = 0;
+}, false);
+// END JAVASCRIPT TOUCH EVENTS
 
 //const mouse = new THREE.Vector2();
 
