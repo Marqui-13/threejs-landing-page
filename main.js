@@ -11,7 +11,6 @@
 //import { OrbitControls } from "https://threejs.org/examples/jsm/controls/OrbitControls.js";
 
 
-let controls;
 // Debug
 const gui = new dat.GUI();
 
@@ -137,7 +136,7 @@ scene.add(camera);
 
 
 // Controls
-controls = new THREE.OrbitControls(camera, renderer.domElement)
+// controls = new THREE.OrbitControls(camera, renderer.domElement)
 // controls.enableDamping = true
 
 
