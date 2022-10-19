@@ -8,6 +8,7 @@
 // Texture Loader
 //const loader = new THREE.TextureLoader();
 //const cross = loader.load('https://static.vecteezy.com/system/resources/thumbnails/002/112/517/small/glow-isolated-blue-effect-lens-flare-explosion-glitter-line-sun-flash-spark-and-stars-vector.jpg');
+import { OrbitControls } from "https://threejs.org/examples/jsm/controls/OrbitControls.js";
 
 
 
@@ -136,7 +137,7 @@ scene.add(camera);
 
 
 // Controls
-const controls = new THREE.OrbitControls(camera, canvas)
+const controls = new OrbitControls(camera, renderer.domElement)
 // controls.enableDamping = true
 
 
