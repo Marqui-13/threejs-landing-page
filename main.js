@@ -224,7 +224,7 @@ const tick = () =>
     //camera.position.y = -position;
 
     // Update Orbital Controls
-     controls.update()
+     //controls.update()
 
     // Render
     renderer.render(scene, camera);
