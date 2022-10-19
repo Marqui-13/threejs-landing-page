@@ -124,7 +124,7 @@ scene.add(camera);
 
 
 // Controls
-// const controls = new OrbitControls(camera, canvas)
+const controls = new OrbitControls(camera, canvas)
 // controls.enableDamping = true
 
 
@@ -228,7 +228,7 @@ const tick = () =>
     //camera.position.y = -position;
 
     // Update Orbital Controls
-    // controls.update()
+     controls.update()
 
     // Render
     renderer.render(scene, camera);
