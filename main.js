@@ -71,6 +71,14 @@ scene.add(pointLight);
 */
 
 
+/**
+ * Sizes Section Starts
+ */
+const sizes = {
+    width: window.innerWidth,
+    height: window.innerHeight
+};
+
 
 /**
  * Renderer Section Starts
@@ -85,16 +93,6 @@ renderer.setClearColor(new THREE.Color('#21282a'), 1)
  * Renderer Section Ends
  */
 
-
-
-
-/**
- * Sizes Section Starts
- */
-const sizes = {
-    width: window.innerWidth,
-    height: window.innerHeight
-};
 
 window.addEventListener('resize', () =>
 {
