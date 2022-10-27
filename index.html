@@ -50,22 +50,6 @@
         position: relative;
       }
 
-      .content:before{
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        border-bottom: 1px solid white;
-        transform: scaleX(1);
-      }
-
-      p{
-        flex-basis: 0;
-        flex-grow: 0.4;
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-      }
-
       p{
         font-size:  1.1rem;
         width: 40vw;
@@ -91,13 +75,6 @@
 
     <!-- GSAP Animations -->
     <script>
-      const content = CSSRulePlugin.getRule('.content:before');
-      const p = document.querySelector('p');
-      const tl = gsap.timeline();
-
-      tl.from(content, {delay: 0.5, duration: 4, cssRule: {scaleX: 0}});
-      tl.to(p, {duration: 4, x: '30px' })
-
     </script>
   </body>
 </html>
