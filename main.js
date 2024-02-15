@@ -52,9 +52,9 @@ const particlesMaterial = new THREE.PointsMaterial(
 
 
 // Mesh
-const sphere = new THREE.Points(geometry,material);
+const torus = new THREE.Points(geometry,material);
 const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial)
-scene.add(sphere, particlesMesh);
+scene.add(torus, particlesMesh);
 
 
 /*
@@ -208,7 +208,7 @@ const tick = () =>
     const elapsedTime = clock.getElapsedTime();
 
     // Update objects
-    sphere.rotation.y = 0.5 * elapsedTime;
+    torus.rotation.y = 0.5 * elapsedTime;
     particlesMesh.rotation.y = -0.1 * elapsedTime;
 
     if (mouseX > 0) {
