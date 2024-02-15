@@ -14,7 +14,6 @@ This project is an interactive Three.js landing page featuring a 3D point cloud 
 ### Built With
 
 - [Three.js](https://threejs.org/)
-- [dat.GUI](https://github.com/dataarts/dat.gui)
 - [GSAP (GreenSock Animation Platform)](https://greensock.com/gsap/)
 - [Vite](https://vitejs.dev/)
 
@@ -70,7 +69,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Acknowledgements
 
 - [Three.js Documentation](https://threejs.org/docs/) for providing comprehensive guides and examples.
-- [dat.GUI](https://github.com/dataarts/dat.gui) for enabling dynamic manipulation of variables.
 - [GSAP](https://greensock.com/) for powerful animations.
 - [Vite](https://vitejs.dev/) for the fast and modern development server.
 
